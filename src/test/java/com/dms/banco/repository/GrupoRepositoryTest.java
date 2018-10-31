@@ -7,10 +7,12 @@ import static org.junit.Assert.assertThat;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.Assume;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dms.banco.AbstractTest;
+import com.dms.banco.config.DbConfig;
 import com.dms.banco.model.Grupo;
 
 public class GrupoRepositoryTest extends AbstractTest {
@@ -30,7 +32,19 @@ public class GrupoRepositoryTest extends AbstractTest {
 
 	@Test
 	public void deveListarOsGrupos() throws Exception {
+		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.0.119"));
 		int expected = 60;
+
+		List<Grupo> grupos = repository.findAll();
+
+		assertNotNull("Failure - expected not null", grupos);
+		assertThat(grupos.size(), equalTo(expected));
+	}
+
+	@Test
+	public void deveListarOsGruposNaLoja() throws Exception {
+		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.0.105"));
+		int expected = 61;
 
 		List<Grupo> grupos = repository.findAll();
 

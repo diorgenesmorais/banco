@@ -36,9 +36,9 @@ import com.dms.banco.model.Grupo;
 @EnableTransactionManagement
 public class DbConfig {
 
-	private String url = "jdbc:firebirdsql:192.168.102.119/3050:c:/users/laudeci/downloads/CLIPP.FDB?charSet=utf8";
-	// private String url = "jdbc:firebirdsql:192.168.0.105/3050:c:/Program Files
-	// (x86)/CompuFour/Clipp/Base/CLIPP.FDB?charSet=utf8";
+	// TODO automatizar conforme o ambiente
+	//private static String url = "jdbc:firebirdsql:192.168.102.119/3050:c:/users/laudeci/downloads/CLIPP.FDB?charSet=utf8";
+	private static String url = "jdbc:firebirdsql:192.168.0.105/3050:c:/Program Files (x86)/CompuFour/Clipp/Base/CLIPP.FDB?charSet=utf8";
 
 	@Bean
 	public DataSource dataSource() {
@@ -76,4 +76,7 @@ public class DbConfig {
 		return transactionManager;
 	}
 
+	public static String getUrl() {
+		return url;
+	}
 }
