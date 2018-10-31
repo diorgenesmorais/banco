@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * &#64;<code>org.springframework.transaction.annotation.Transactional</code>
  * será feito roolback após os testes.
  * 
+ * @see documentation {@link https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-tx}
  * @author Diorgenes Morais
  *
  */
