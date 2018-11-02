@@ -32,7 +32,7 @@ public class GrupoRepositoryTest extends AbstractTest {
 
 	@Test
 	public void deveListarOsGrupos() throws Exception {
-		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.102.119"));
+		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.102"));
 		int expected = 60;
 
 		List<Grupo> grupos = repository.findAll();
@@ -43,7 +43,7 @@ public class GrupoRepositoryTest extends AbstractTest {
 
 	@Test
 	public void deveListarOsGruposNaLoja() throws Exception {
-		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.0.121"));
+		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.0"));
 		int expected = 60;
 
 		List<Grupo> grupos = repository.findAll();
