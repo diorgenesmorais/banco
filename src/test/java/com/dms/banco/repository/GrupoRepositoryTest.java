@@ -43,7 +43,7 @@ public class GrupoRepositoryTest extends AbstractTest {
 
 	@Test
 	public void deveListarOsGruposNaLoja() throws Exception {
-		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.0.105"));
+		Assume.assumeTrue(DbConfig.getUrl().contains("192.168.0.121"));
 		int expected = 60;
 
 		List<Grupo> grupos = repository.findAll();
